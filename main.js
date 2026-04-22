@@ -133,6 +133,7 @@ function renderQuestion() {
     quizContainer.appendChild(optionElement);
   });
   let skipButton = document.createElement("button");
+  skipButton.className = "skip-btn"
   skipButton.textContent = "Skip Question";
   skipButton.onclick = () => {
     currentQuestionIndex++;
