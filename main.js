@@ -127,7 +127,9 @@ function renderQuestion() {
       if (currentQuestionIndex < questions.length) {
         renderQuestion();
       } else {
-        quizContainer.innerHTML = `<h2>Quiz Completed! Your score is ${(score / questions.length) * 100}%</h2>`;
+        let percentage = (score / questions.length) * 100;
+        let emoji = percentage >= 80 ? "🎉" : percentage >= 50 ? "👍" : "💪";
+        quizContainer.innerHTML = `<div class="result-screen"><h2>${emoji} Quiz Completed! Your score is ${percentage}%</h2></div>`;
       }
     };
     quizContainer.appendChild(optionElement);
@@ -140,7 +142,9 @@ function renderQuestion() {
     if (currentQuestionIndex < questions.length) {
       renderQuestion();
     } else {
-      quizContainer.innerHTML = `<h2>Quiz Completed! Your score is ${(score / questions.length) * 100}%</h2>`;
+      let percentage = (score / questions.length) * 100;
+      let emoji = percentage >= 80 ? "🎉" : percentage >= 50 ? "👍" : "💪";
+      quizContainer.innerHTML = `<div class="result-screen"><h2>${emoji} Quiz Completed! Your score is ${percentage}%</h2></div>`;
     }
   };
   quizContainer.appendChild(skipButton);
